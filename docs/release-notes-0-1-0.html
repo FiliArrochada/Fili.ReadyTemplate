@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="stylesheet" href="../templates/css/readyset.css" />
+ <link rel="stylesheet" href="../templates/css/inst.css" />
+ <link rel="stylesheet" href="../templates/css/print.css" media="print" />
+ <title>Fili.ReadyTemplate 0.1.0: Release Notes</title>
+</head>
+
+<body>
+<nav class="sitenav" aria-label="Site"><a class="brand" href="../index.html">Fili.ReadyTemplate <small>0.1.0</small></a><a href="../templates/browse.html">Browse templates</a><a href="../docs/faq.html">FAQ</a><a href="../docs/recommended-tools.html">Tools</a><a href="https://github.com/filipe-silva/Fili.ReadyTemplate">GitHub</a></nav>
+ <h2>Fili.ReadyTemplate 0.1.0: Release Notes</h2>
+
+<div class="app">
+<div class="readyset">
+
+ <div id="releaseinfo">
+ <h3>Product Release Information</h3>
+ <table border="1" cellpadding="3" cellspacing="2" class="axial">
+  <tr>
+   <th>Product:</th>
+   <td><a href="../index.html">Fili.ReadyTemplate</a>, a continuation of ReadySET</td>
+  </tr>
+  <tr>
+   <th>Release Number:</th>
+   <td>0.1.0</td>
+  </tr>
+  <tr>
+   <th>Release Date:</th>
+   <td>2026/09/16</td>
+  </tr>
+  <tr>
+   <th>Based On:</th>
+   <td>ReadySET 0.9.3 (2004/10/27) by Jason Robbins; see the
+       <a href="readyset/release-notes-0-9-3.html">0.9.3 release notes</a> and the
+       <a href="../templates/readyset-license.html">ReadySET license</a></td>
+  </tr>
+  <tr>
+   <th>Customer Support:</th>
+   <td>Questions and problem reports go to the
+       <a href="https://github.com/filipe-silva/Fili.ReadyTemplate/issues">issue tracker</a>
+       of the repository that publishes this site.</td>
+  </tr>
+ </table>
+ </div> <!-- /releaseinfo -->
+
+
+ <div id="introduction">
+ <h3>Introduction</h3>
+
+ <p>This document contains the release notes for Fili.ReadyTemplate version 0.1.0. The
+ following sections describe the release in detail and provide information that supplements the
+ main documentation.</p>
+
+ <p>Fili.ReadyTemplate is a continuation of <strong>ReadySET</strong>, the library of
+ software engineering document templates that Jason Robbins published at readyset.tigris.org.
+ That project ended when Tigris.org shut down; 0.9.3 (2004) was its last release. This first
+ release of Fili.ReadyTemplate changes nothing about what the templates say: it brings the
+ pages up to current web standards, restyles them, and repairs the links that died with
+ Tigris.org. The templates remain Jason Robbins' work under the
+ <a href="../templates/readyset-license.html">ReadySET license</a>, which also records the
+ original project's history and contact details. Fili.ReadyTemplate is not affiliated with or
+ endorsed by the ReadySET author.</p>
+
+ </div> <!-- /introduction -->
+
+
+ <div id="whatsnew">
+ <h3>What's New?</h3>
+
+ <ul>
+  <li><strong>HTML5 pages.</strong> Every page lost its XML prologue and Tigris DOCTYPE and
+  gained <code>&lt;!DOCTYPE html&gt;</code>, a language attribute, a UTF-8 charset and a
+  viewport declaration. The inline <code>@import</code> blocks became <code>&lt;link&gt;</code>
+  tags to the three stylesheets.</li>
+
+  <li><strong>New stylesheets.</strong> <code>readyset.css</code> is rewritten on CSS custom
+  properties: a readable single column, system fonts, responsive tables, and a dark colour
+  scheme that follows the operating system. <code>inst.css</code> is still the customisation
+  layer and now carries commented examples for every toggle. <code>print.css</code> still hides
+  the sticky notes and the footnote on paper. Every class name from ReadySET 0.9.3 is honoured,
+  so documents made from the original templates render correctly with the new files.</li>
+
+  <li><strong>No more frames.</strong> The frameset, its navigation frame and the JavaScript
+  tree were replaced by <a href="../templates/browse.html">a browse page</a> that lists the
+  templates by activity, by suggested sequence and alphabetically, and now includes the twelve
+  worksheets the old tree never showed. A navigation bar at the top of every page links back to
+  it; that bar is the one addition inside each template and is meant to be deleted when a
+  template is copied into a project.</li>
+
+  <li><strong>Links repaired.</strong> Everything that pointed at the dead
+  <code>readyset.tigris.org</code> was repointed: the <em>words of wisdom</em> essays to the
+  Internet Archive, downloads to the repository, the glossary and home page to this site, the
+  mailing list and issue tracker to the repository's issues. Eleven mistyped internal links and
+  anchors were corrected.</li>
+
+  <li><strong>ReadySET Pro references removed from the templates.</strong> The commercial
+  companion to ReadySET is no longer sold: its website is a 2010 snapshot whose checkout posts
+  to a payment processor that closed in 2016. The sentence inviting you to evaluate it was
+  removed from the TODO box at the foot of every template. Mentions in the original author's
+  prose on the overview page, in the FAQ and in the license file were left as written.</li>
+ </ul>
+
+ </div> <!-- /whatsnew -->
+
+
+ <div id="installation">
+ <h3>Installation and Upgrade Notes</h3>
+
+ <dl>
+
+ <dt>Installation</dt>
+
+ <dd>Fili.ReadyTemplate is not a program, it is just a set of HTML templates, so no
+ installation is needed.</dd>
+
+ <dd>Download the
+ <a href="https://github.com/filipe-silva/Fili.ReadyTemplate/archive/refs/heads/main.zip">archive</a>
+ or clone the repository, copy the <code>templates</code> folder into your project website or
+ version control system, and edit the templates to describe your project.</dd>
+
+
+ <dt>Manifest</dt>
+
+ <dd>This release consists of the following items:
+ <ul>
+  <li>HTML templates and CSS stylesheets</li>
+  <li>FAQ, HOWTO-upgrade, recommended tools, and release notes (this file, plus the
+  ReadySET 0.9.0 to 0.9.3 release notes kept for history in the <code>docs/readyset</code>
+  folder)</li>
+ </ul>
+ </dd>
+
+
+ <dt>Minimum System Requirements</dt>
+
+ <dd>You can use the templates on any computer that can run a text editor and a web browser.
+ The stylesheets use CSS custom properties, which every browser released since 2017 supports;
+ in an older browser the pages still read correctly, only unstyled.</dd>
+
+
+ <dt>Version Compatibility</dt>
+
+ <dd>Documents filled in from ReadySET 0.9.3 or earlier need no changes. To pick up the new
+ look, replace your copy of the <code>css</code> folder with this release's and add the three
+ <code>&lt;link&gt;</code> tags from any 0.1.0 template to the <code>&lt;head&gt;</code> of
+ your pages in place of the old <code>&lt;style&gt;</code> block. The
+ <a href="HOWTO-upgrade.html">upgrade HOWTO</a> describes the version-control side of an
+ upgrade; its CVS commands date from 2004 but the approach applies to any system.</dd>
+
+ <dd>The <code>frameset.html</code>, <code>frame-nav.html</code> and
+ <code>frame-select-at-left.html</code> pages, the <code>js</code> folder, and
+ <code>css/nav.css</code> with its folder icons were removed. Nothing in a filled-in document
+ referenced them.</dd>
+
+ </dl>
+
+ </div> <!-- /installation -->
+
+
+ <div id="recentchanges">
+ <h3>Recent Changes</h3>
+
+ <table>
+  <tr class="a"><th>Type</th><th>Summary</th></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>HTML5 document structure, UTF-8, viewport, external stylesheets on every page</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>readyset.css rewritten: custom properties, responsive layout, dark scheme</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>inst.css documented as the customisation layer with commented toggles</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>print.css hides navigation, sticky notes and footnote</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>browse.html replaces the frameset; site navigation bar on every page</td></tr>
+  <tr class="a"><td>DEFECT</td><td>Links to readyset.tigris.org repointed to this site, the repository or the Internet Archive</td></tr>
+  <tr class="a"><td>DEFECT</td><td>faq.html linked user-guide.html instead of userguide.html</td></tr>
+  <tr class="a"><td>DEFECT</td><td>srs.html linked qa-plan without the .html extension</td></tr>
+  <tr class="a"><td>DEFECT</td><td>test-suite.html had a malformed anchor to test-cases.html</td></tr>
+  <tr class="a"><td>DEFECT</td><td>all-in-one.html linked a status-report2.html that never existed</td></tr>
+  <tr class="a"><td>DEFECT</td><td>design-architecture.html linked component C-30 while naming C-20</td></tr>
+  <tr class="a"><td>DEFECT</td><td>glossary-std.html misspelled the dg_efficiency anchor</td></tr>
+  <tr class="a"><td>DEFECT</td><td>qa-plan.html used abbreviated quality-goal anchors that do not exist in glossary-std.html</td></tr>
+  <tr class="a"><td>DEFECT</td><td>use-cases.html and feature-set.html linked anchors that do not exist</td></tr>
+  <tr class="a"><td>DEFECT</td><td>Stray closing script tags removed from the docs pages</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>ReadySET Pro sentence removed from every template's TODO box</td></tr>
+ </table>
+
+ </div> <!-- /recentchanges -->
+
+
+ <div id="knownproblems">
+ <h3>Known Problems and Workarounds</h3>
+
+ <ul>
+  <li>The sample test suite in <code>test-suite.html</code> refers to example test cases and use
+  cases that the sample <code>test-cases.html</code> and <code>use-cases.html</code> do not
+  contain, so those anchors land at the top of the page. They are illustrations of the naming
+  pattern, not defects to fix, and were left alone.</li>
+  <li><code>sdm.html</code> is the same placeholder it was in ReadySET 0.9.3; links into its
+  sections land at the top of the page.</li>
+  <li>The <em>words of wisdom</em> essays exist only in the Internet Archive. If a snapshot is
+  missing, the Archive's calendar view usually has a neighbouring one.</li>
+ </ul>
+
+ </div> <!-- /knownproblems -->
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,138 +1,350 @@
-/* $Id: readyset.css,v 1.19 2004/07/08 20:34:12 jrobbins Exp $
+/* readyset.css - base styles for the ReadySET templates.
 
-This file is based on tigris.css, which is available from 
-http://style.tigris.org/.
-	
-This file defines basic default formatting for HTML conforming to
-Tigris application style. 
+   Originally derived from tigris.css (2004). Modernised for Fili.ReadyTemplate, the continuation of ReadySET: HTML5
+   pages, CSS custom properties, a responsive single-column layout, and a dark colour scheme
+   that follows the operating system. Every class name from ReadySET 0.9.3 is still honoured,
+   so documents filled in from the old templates keep working with this file.
 
-To extend or override these rules for your instance, edit inst.css
-instead of this file. */
+   Do not customise this file. Fonts, colours and the show/hide toggles belong in inst.css,
+   which is loaded after this one and overrides it. */
 
-table, th, td {
- border: none;
+
+/* ------------------------------------------------------------------ design tokens */
+
+:root {
+  color-scheme: light dark;
+
+  --rs-font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  --rs-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --rs-measure: 68rem;
+
+  --rs-bg: #ffffff;
+  --rs-fg: #1b1f24;
+  --rs-muted: #5f6368;
+  --rs-rule: #d0d3d8;
+  --rs-link: #0b57d0;
+  --rs-link-visited: #6b3fa0;
+
+  --rs-heading-bg: #e8eaed;
+  --rs-heading-bar: #5f6368;
+
+  --rs-th-bg: #e8eaed;
+  --rs-td-bg: #f5f6f7;
+
+  --rs-note-bg: #fff8c5;
+  --rs-note-fg: #3b2e00;
+  --rs-note-border: #d4a72c;
+
+  --rs-impact-bg: #eef1f4;
+  --rs-impact-border: #b6bcc4;
+
+  --rs-sample1: #a4262c;
+  --rs-sample2: #107c10;
+  --rs-sample3: #0b57d0;
+  --rs-sample4: #8a2be2;
+
+  --rs-target: #d93025;
+
+  --rs-nav-bg: #1f2328;
+  --rs-nav-fg: #f6f8fa;
 }
 
-.tabs th {
- border-right: 1px solid #333;
- background-color: #ddd !important;
- color: #fff;
- border-left: 3px solid #fff;
-}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rs-bg: #0f1115;
+    --rs-fg: #e6e6e6;
+    --rs-muted: #9aa0a6;
+    --rs-rule: #2f343a;
+    --rs-link: #8ab4f8;
+    --rs-link-visited: #c58af9;
 
-.readyset .tabs td {
- background-color: #999 !important;
- border-bottom: 1px solid #fff;
- border-right: 1px solid #fff;
- border-left: 3px solid #fff;
-}
+    --rs-heading-bg: #1c2026;
+    --rs-heading-bar: #9aa0a6;
 
-.tabs {
- border-bottom: 6px #ddd solid;
-}
+    --rs-th-bg: #1c2026;
+    --rs-td-bg: #161a1f;
 
-.tabs th, .tabs th a:link, .tabs th a:visited {
- color: #555;
-}
+    --rs-note-bg: #2b2610;
+    --rs-note-fg: #f3e9c4;
+    --rs-note-border: #a68a2c;
 
-.tabs td, .tabs td a:link, .tabs td a:visited {
- color: #fff;
-}
+    --rs-impact-bg: #161a1f;
+    --rs-impact-border: #3a4048;
 
-.tabs a {
- text-decoration: none;
-}
+    --rs-sample1: #f28b82;
+    --rs-sample2: #81c995;
+    --rs-sample3: #8ab4f8;
+    --rs-sample4: #c58af9;
 
-.axial th {
- background-color: #ddd;
- color: black;
-}
+    --rs-target: #f28b82;
 
-
-body .grid td {
- border-top: 1px solid #ccc;
- border-left: 1px solid #ccc;
- background-color: transparent;
+    --rs-nav-bg: #000000;
+    --rs-nav-fg: #e6e6e6;
+  }
 }
 
 
-body, textarea, pre, code {
- font-size: x-small;
- voice-family: "\"}\"";
- voice-family: inherit;
- font-size: small;
+/* ------------------------------------------------------------------ page */
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
-small, div.tabs th, div.tabs td, input, select {
- font-size: xx-small;
- voice-family: "\"}\"";
- voice-family: inherit;
- font-size: x-small;
+body {
+  max-width: var(--rs-measure);
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  background: var(--rs-bg);
+  color: var(--rs-fg);
+  font: 1rem/1.55 var(--rs-font);
 }
 
-.tabs td, .tabs th, dt {
- font-weight: bold;
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 1.25rem 0 0.75rem;
 }
 
-table {
- font-size: 1em;
+h3, h4 {
+  clear: both;
+  background: var(--rs-heading-bg);
+  border-left: 0.6rem solid var(--rs-heading-bar);
+  border-radius: 0 4px 4px 0;
+  padding: 0.3rem 0.6rem;
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
 }
 
-
-/* box properties (exclusive of borders), positioning, alignments,
-list types, text-indent */
+h4 {
+  font-size: 1.05rem;
+  border-left-width: 0.4rem;
+}
 
 p, ul, ol, dl {
- margin-top: .67em;
- margin-bottom: .67em;
+  margin: 0.67em 0;
 }
 
-.readyset h3, .readyset h4 {
- padding: 3px;
- padding-left: 5px;
- margin-right: 2px;
- margin-left: 2px;
- margin-bottom: 0;
- clear: both;
+dt {
+  font-weight: 600;
+  margin-top: 0.75em;
 }
 
-form {
- margin: 0;
+dd {
+  margin: 0.25em 0 0.67em 1.5rem;
 }
-
 
 ol ol { list-style-type: lower-alpha; }
 ol ol ol { list-style-type: lower-roman; }
 
+a { color: var(--rs-link); }
+a:visited { color: var(--rs-link-visited); }
+a:focus-visible { outline: 2px solid var(--rs-link); outline-offset: 2px; }
+
+code, pre, textarea, kbd {
+  font-family: var(--rs-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 0.75rem;
+  background: var(--rs-td-bg);
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+small { font-size: 0.85em; }
+
+form { margin: 0; }
+
+[id] { scroll-margin-top: 3.5rem; }
+
+
+/* ------------------------------------------------------------------ site navigation bar
+   Added by the mirror so every page can get back to the template index. It is not part of
+   the template proper: delete the <nav class="sitenav"> element when you copy a template. */
+
+.sitenav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.25rem;
+  margin: 0 -1rem 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--rs-nav-bg);
+  color: var(--rs-nav-fg);
+  font-size: 0.875rem;
+}
+
+.sitenav a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+
+.sitenav a:hover,
+.sitenav a:focus-visible {
+  text-decoration: underline;
+  outline-color: currentColor;
+}
+
+.sitenav .brand {
+  font-weight: 700;
+  margin-right: auto;
+}
+
+.sitenav .brand small {
+  font-weight: 400;
+  opacity: 0.75;
+  margin-left: 0.4em;
+}
+
+
+/* ------------------------------------------------------------------ tables */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
 td, th {
- padding: 2px 3px;
- text-align: left;
- vertical-align: top;
+  padding: 0.35rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--rs-rule);
 }
 
-
-.tabs {
- margin-top: .67em;
- margin-right: 2px;
- margin-left: 2px;
- padding-left: 8px;
+th {
+  background: var(--rs-th-bg);
+  font-weight: 600;
 }
 
-.tabs td, .tabs th {
- padding: 3px 9px;
+.readyset td {
+  background: var(--rs-td-bg);
 }
 
-
-.right { text-align: right !important; }
-.center { text-align: center !important; }
+/* "axial" tables have their headers down the left-hand side */
+.readyset .axial th,
+.readyset .axial td {
+  border: 0;
+  border-bottom: 1px solid var(--rs-rule);
+}
 
 .readyset .axial th {
- text-align: right;
- white-space: nowrap;
+  text-align: right;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.readyset .axial td {
+  background: transparent;
+}
+
+tr ul, tr ol, tr p { margin-top: 0; }
+tr ul { padding-left: 1.25em; }
+
+.right  { text-align: right !important; }
+.center { text-align: center !important; }
+
+/* letter tabs at the top of the glossaries */
+.tabs {
+  border-bottom: 3px solid var(--rs-rule);
+  margin: 0.67em 0;
+}
+
+.tabs th, .tabs td {
+  border: 0;
+  padding: 0.2rem 0.6rem;
+  font-weight: 600;
+  background: transparent;
+}
+
+.tabs a { text-decoration: none; }
+
+
+/* ------------------------------------------------------------------ instruction boxes */
+
+.sticky, .tip, .todo {
+  background: var(--rs-note-bg);
+  color: var(--rs-note-fg);
+  border: 1px solid var(--rs-note-border);
+  border-left-width: 4px;
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  margin: 0.75rem 0;
+}
+
+.sticky a, .tip a, .todo a { color: inherit; }
+
+/* the quick-links box floated beside the project overview on the home page */
+.quicklinks {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.quicklinks a { display: block; }
+
+.tip, .todo {
+  padding-left: 3rem;
+  min-height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 0.6rem 0.55rem;
+  background-size: 1.75rem;
+}
+
+.tip  { background-image: url(tip.png); }
+.todo { background-image: url(todo.png); }
+
+#processimpact {
+  background: var(--rs-impact-bg) url(gears.png) no-repeat 0.6rem 0.55rem / 1.75rem;
+  border: 1px solid var(--rs-impact-border);
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem 0.6rem 3rem;
+  margin: 0.75rem 0;
+}
+
+.reusablefragment {
+  padding: 0.5rem;
+  margin: 3rem 0;
+  background: var(--rs-td-bg);
+  border: 2px dashed var(--rs-rule);
 }
 
 
-dd { margin-bottom: .67em; }
+/* ------------------------------------------------------------------ sample text
+   Example content that you are meant to replace carries a coloured double rule on the right.
+   The four colours distinguish alternative samples for the same slot. */
+
+.sample1, .sample2, .sample3, .sample4 {
+  border-right: 4px double;
+  padding-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sample1 { border-right-color: var(--rs-sample1); }
+.sample2 { border-right-color: var(--rs-sample2); }
+.sample3 { border-right-color: var(--rs-sample3); }
+.sample4 { border-right-color: var(--rs-sample4); }
+
+
+/* ------------------------------------------------------------------ misc template classes */
+
+.linklist a { display: block; }
+.sub { padding-left: 1em; }
 
 .tier1 { margin-left: 0; }
 .tier2 { margin-left: 1.5em; }
@@ -146,77 +358,103 @@ dd { margin-bottom: .67em; }
 
 .alt { display: none; }
 
-
-/* additions specific to ReadySET */
-
-tr ul, tr ol, tr p { margin-top: 0; }
-tr ul { margin-left: 0px; padding-left: 2em; }
-
-
-.sticky {
- padding: 3px;
- margin-right: 2px;
- margin-bottom: 3px;
- border-right: 1px solid;
- border-bottom: 1px solid;
+a.def {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--rs-link);
+  cursor: help;
 }
 
-.tip {
- padding: 3px;
- margin-right: 2px;
- margin-bottom: 3px;
- border-right: 1px solid;
- border-bottom: 1px solid;
-}
-
-.todo {
- padding: 3px;
- margin-right: 2px;
- margin-bottom: 3px;
- border-right: 1px solid;
- border-bottom: 1px solid;
-}
-
-
-#processimpact {
- border: 1px solid;
- padding: 3px;
- margin-right: 2px;
- margin-bottom: 2px;
-}
-
-.footnote {
-   width: 80%;
-   border-top: solid #aaa 1px;
-   font-size: x-small;
-   padding-top: 3px;
-   margin-top: 3em;
-}
-
-.reusablefragment {
- padding: 6px;
- margin-top: 3em;
- margin-bottom: 3em;
-}
-
-.sample1, .sample2, .sample3, .sample4 {
- padding-right: 2px;
- margin-bottom: 4px;
+:target {
+  outline: 2px solid var(--rs-target);
+  outline-offset: 2px;
 }
 
 .legal1 {
- border: 2px solid;
- padding: 3px;
- text-align: center !important;
- font-size: xx-large;
- font-weight: bold;
- display: none;
+  display: none;
+  margin: 2rem 0 0;
+  padding: 0.5rem;
+  border: 2px solid var(--rs-rule);
+  text-align: center !important;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.linklist a { display: block; }
+.footnote {
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rs-rule);
+  font-size: 0.8rem;
+  color: var(--rs-muted);
+}
 
-.sub { padding-left: 1em;  }
 
-:target {
-  border: 2px solid red; 
+/* ------------------------------------------------------------------ browse page */
+
+.browse details {
+  margin: 0.75rem 0;
+  background: var(--rs-td-bg);
+  border: 1px solid var(--rs-rule);
+  border-radius: 6px;
+}
+
+.browse summary {
+  cursor: pointer;
+  padding: 0.6rem 0.9rem;
+  font-weight: 600;
+}
+
+.browse details > * + * {
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+}
+
+.browse details > :last-child {
+  padding-bottom: 0.75rem;
+}
+
+.browse .group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0.25rem 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.browse .group > li {
+  margin: 0.5rem 0;
+}
+
+.browse .group ul {
+  margin: 0.15rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.browse .group ul ul {
+  list-style-type: circle;
+}
+
+
+/* ------------------------------------------------------------------ small screens */
+
+@media (max-width: 40rem) {
+  body { font-size: 0.95rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.1rem; }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .readyset .axial th {
+    white-space: normal;
+    width: auto;
+  }
+
+  .quicklinks {
+    float: none;
+    margin: 0.75rem 0;
+  }
+
+  dd { margin-left: 1rem; }
 }

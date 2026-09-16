@@ -1,33 +1,56 @@
-/* $Id: print.css,v 1.3 2003/06/24 22:53:48 jrobbins Exp $
+/* print.css - rules that apply only when a page is printed.
 
-This file contains CSS sytle rules that make the document look more
-presentable when printed.  E.g., one cannot follow hyperlinks to
-definitions on a printed page, so the dashed underlines are removed.
+   Loaded with media="print", after readyset.css and inst.css. Hyperlinks cannot be followed on
+   paper, so the dashed "definition" underlines go away, and the mirror's navigation bar, the
+   sticky notes and the copyright footnote are dropped. */
 
-*/
+@page {
+  margin: 2cm;
+}
+
+body {
+  max-width: none;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  font-size: 10.5pt;
+}
+
+.sitenav, .sticky, .footnote {
+  display: none;
+}
+
+a {
+  color: inherit;
+}
+
+a.def {
+  text-decoration: none;
+  border-bottom: none;
+}
 
 h3, h4 {
- font-size: x-small;
+  break-after: avoid;
+  background: #eee;
+  border-left-color: #666;
 }
 
-body, textarea, pre, code {
- font-size: xx-small;
+table, .todo, .tip, #processimpact, .reusablefragment {
+  break-inside: avoid;
 }
 
-small, div.tabs th, div.tabs td, input, select {
- font-size: xx-small;
+.todo, .tip, #processimpact {
+  background-color: #f4f4f4;
+  border-color: #999;
+  color: #000;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
-table {
- font-size: xx-small;
+.readyset td, .readyset th {
+  background: transparent;
 }
 
-.sticky, .footnote {
- display: none;
-}
-
-a.def { 
- text-decoration: none; 
- border-bottom: none; 
- color: black;
+:target {
+  outline: none;
 }

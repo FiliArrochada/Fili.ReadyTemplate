@@ -1,9 +1,13 @@
-# ReadySET 0.9.3
+# Fili.ReadySet
 
 A mirror of **ReadySET** (Ready-to-use Software Engineering Templates) release 0.9.3, the set of
 HTML templates for software project documentation originally published at readyset.tigris.org
 in 2004. Tigris.org has since shut down, so this copy is kept here and served as a static site
 with GitHub Pages.
+
+The `Fili.` prefix only marks this as a mirror maintained by this repository's owner; the
+templates themselves are Jason Robbins' work, unchanged, under the license below. This
+repository is not endorsed by the ReadySET author.
 
 The site is plain HTML, CSS and a little JavaScript with no build step. `index.html` at the
 repository root is the entry page.

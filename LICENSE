@@ -1,0 +1,28 @@
+Copyright (c) 2026 FiliArrochada. All rights reserved.
+
+This software, including its source code, documentation and artwork, is the property of
+FiliArrochada. The source code is published so that it can be read; publishing it grants no
+licence to use it.
+
+You may install and run builds that FiliArrochada itself distributes (through an app store, an
+extension marketplace or this repository's releases) for your own use.
+
+Beyond that, no one may use, copy, modify, merge, publish, distribute, sublicense or sell this
+software or any part of it, or build or distribute a work based on it, for any purpose,
+commercial or not, without prior written permission from FiliArrochada.
+
+Third-party components included with or used by this software (libraries, fonts, data, and any
+code listed in a THIRD-PARTY-NOTICES file) remain under their own licences, and nothing in this
+notice limits the rights those licences grant.
+
+The ReadySET templates and documents under src/Fili.ReadyTemplate/wwwroot/templates and
+src/Fili.ReadyTemplate/wwwroot/docs, translations included, are copyright 2003-2004 Jason Robbins
+and remain under the ReadySET license in templates/readyset-license.html. This notice covers only
+FiliArrochada's own code around them, in src/ and tst/.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL FILIARROCHADA BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+To ask for permission, open an issue in this repository.

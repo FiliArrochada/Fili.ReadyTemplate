@@ -49,7 +49,7 @@ The template *content* is the ReadySET 0.9.3 original. Around it:
 
 ## Using the templates
 
-Download the [zip of this repository](https://github.com/filipe-silva/Fili.ReadyTemplate/archive/refs/heads/main.zip)
+Download the [zip of this repository](https://github.com/FiliArrochada/Fili.ReadyTemplate/archive/refs/heads/main.zip)
 or clone it, copy the `templates` folder into your project, and edit the pages with any HTML or
 text editor. Yellow TODO and TIP boxes are instructions to delete, text in ALL CAPS is to be
 replaced, and example text carries a coloured rule on its right-hand edge. The

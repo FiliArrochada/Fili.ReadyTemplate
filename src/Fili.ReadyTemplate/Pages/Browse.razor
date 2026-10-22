@@ -1,0 +1,112 @@
+@page "/browse"
+@inject IStringLocalizer<Strings> L
+@inject TemplateCatalog Catalog
+
+<PageTitle>@L["Browse_Title"]</PageTitle>
+
+<h2>@L["Browse_Title"]</h2>
+
+<div class="app">
+<div class="readyset browse">
+
+    <p>
+        @L["Browse_Intro_1"]
+        <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate/archive/refs/heads/main.zip">@L["Browse_Intro_DownloadLink"]</a>
+        @L["Browse_Intro_2"]
+        <a href="docs/faq.html">@L["Browse_Intro_FaqLink"]</a>
+        @L["Browse_Intro_3"]
+    </p>
+
+    <p>@L["Browse_Intro_Groupings"]</p>
+
+    <details open>
+        <summary>@L["Browse_ByActivity"]</summary>
+        <ol class="group">
+            @foreach (var group in Catalog.ByActivity)
+            {
+                <li>@L[group.Key]
+                    <ul>
+                        @foreach (var node in group.Children)
+                        {
+                            <TemplateNodeView Node="node" />
+                        }
+                    </ul>
+                </li>
+            }
+        </ol>
+    </details>
+
+    <details>
+        <summary>@L["Browse_BySequence"]</summary>
+        <ol class="group">
+            @foreach (var step in Catalog.BySequence)
+            {
+                <li>@(step.Number is int n ? L["Seq_Step", n] : L["Seq_EveryWeek"])
+                    <ul>
+                        @foreach (var node in step.Children)
+                        {
+                            <TemplateNodeView Node="node" />
+                        }
+                    </ul>
+                </li>
+            }
+        </ol>
+    </details>
+
+    <details>
+        <summary>@L["Browse_All"]</summary>
+        <ol class="group">
+            @foreach (var column in Columns(Alphabetical(), 3))
+            {
+                <li>
+                    <ul>
+                        @foreach (var t in column)
+                        {
+                            <li><a href="@t.Href">@L[t.Key]</a></li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ol>
+    </details>
+
+    <h3>@L["Browse_Getting_Title"]</h3>
+
+    <ul>
+        <li>
+            <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate/archive/refs/heads/main.zip">@L["Browse_Getting_DownloadLink"]</a>
+            @L["Browse_Getting_1"]
+            <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate">@L["Browse_Getting_RepoLink"]</a>.
+            @L["Browse_Getting_1b"]
+        </li>
+        <li>
+            @L["Browse_Getting_2a"] <a href="docs/recommended-tools.html">@L["Nav_Tools"]</a>
+            @L["Browse_Getting_2b"] <a href="docs/HOWTO-upgrade.html">@L["Browse_Getting_UpgradeLink"]</a>
+            @L["Browse_Getting_2c"]
+        </li>
+        <li>
+            @L["Browse_Getting_3a"]
+            <a href="https://web.archive.org/web/2006/http://readyset.tigris.org/words-of-wisdom/">@L["Browse_Getting_ArchiveLink"]</a>.
+        </li>
+    </ul>
+
+</div>
+
+<div class="footnote">
+    @L["Browse_Footnote"] <a href="templates/readyset-license.html">@L["Home_Notice_LicenseLink"]</a>.
+</div>
+</div>
+
+@code {
+    private List<TemplateInfo> Alphabetical()
+        => Catalog.All.OrderBy(t => L[t.Key].Value, StringComparer.CurrentCultureIgnoreCase).ToList();
+
+    private static IEnumerable<IReadOnlyList<TemplateInfo>> Columns(IReadOnlyList<TemplateInfo> items, int count)
+    {
+        var size = (int)Math.Ceiling(items.Count / (double)count);
+        for (var i = 0; i < items.Count; i += size)
+        {
+            yield return items.Skip(i).Take(size).ToList();
+        }
+    }
+}

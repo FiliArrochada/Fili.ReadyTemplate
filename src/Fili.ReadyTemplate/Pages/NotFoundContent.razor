@@ -1,0 +1,18 @@
+@inject IStringLocalizer<Strings> L
+
+<h2>@L["Content_NotFound_Title"]</h2>
+
+<div class="app">
+<div class="readyset">
+    <p>@L["Content_NotFound_Body"]</p>
+    @if (!string.IsNullOrEmpty(Path))
+    {
+        <p><code>@Path</code></p>
+    }
+    <p><a href="browse">@L["Nav_Browse"]</a></p>
+</div>
+</div>
+
+@code {
+    [Parameter] public string? Path { get; set; }
+}

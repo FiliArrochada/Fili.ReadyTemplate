@@ -1,0 +1,51 @@
+@page "/"
+@inject IStringLocalizer<Strings> L
+@inject ContentLoader Loader
+
+<PageTitle>@L["Home_Title"]</PageTitle>
+
+<h2>@L["Home_Title"]</h2>
+
+<div class="app">
+<div class="readyset">
+
+    <div class="tip">
+        <strong>Fili.ReadyTemplate @AppInfo.Version</strong> @L["Home_Notice_Body"]
+        <a href="templates/readyset-license.html">@L["Home_Notice_LicenseLink"]</a>.
+        @L["Home_Notice_Disclaimer"]
+        <a href="docs/release-notes-0-2-0.html">@L["Home_Notice_ReleaseNotesLink"]</a>.
+        <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate">@L["Home_Notice_GitHubLink"]</a>.
+    </div>
+
+    <div class="sticky quicklinks">
+        <a href="browse">@L["Quick_Browse"]</a>
+        <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate/archive/refs/heads/main.zip">@L["Quick_Download"]</a>
+        <a href="https://web.archive.org/web/2006/http://readyset.tigris.org/words-of-wisdom/">@L["Quick_Wisdom"]</a>
+        <a href="docs/release-notes-0-2-0.html">@L["Quick_ReleaseNotes"]</a>
+    </div>
+
+    <p>@L["Home_OriginalOverviewNote"]</p>
+
+    @if (_overview is null)
+    {
+        <p class="loading">@L["Content_Loading"]</p>
+    }
+    else
+    {
+        @if (_overview.FellBackToDefault)
+        {
+            <div class="tip">@L["Content_NotTranslated", L["Lang_" + _overview.RequestedCulture]]</div>
+        }
+        <div class="content">@((MarkupString)_overview.BodyHtml)</div>
+    }
+
+</div>
+</div>
+
+@code {
+    private ContentPage? _overview;
+
+    // The overview fragment was cut from the 2004 root index.html, so its links are root-relative.
+    protected override async Task OnInitializedAsync()
+        => _overview = await Loader.LoadAsync("content/overview.html", linkBase: "");
+}

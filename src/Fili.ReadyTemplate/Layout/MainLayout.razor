@@ -1,0 +1,30 @@
+@inherits LayoutComponentBase
+@inject IStringLocalizer<Strings> L
+@inject CultureService Culture
+
+<nav class="sitenav" aria-label="@L["Nav_SiteLabel"]">
+    <a class="brand" href="">Fili.ReadyTemplate <small>@AppInfo.Version</small></a>
+    <a href="browse">@L["Nav_Browse"]</a>
+    <a href="docs/faq.html">@L["Nav_Faq"]</a>
+    <a href="docs/recommended-tools.html">@L["Nav_Tools"]</a>
+    <a href="docs/release-notes-0-2-0.html">@L["Nav_ReleaseNotes"]</a>
+    <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate">GitHub</a>
+    <label class="lang">
+        <span class="visually-hidden">@L["Nav_Language"]</span>
+        <select value="@Culture.Current" @onchange="OnCultureChanged" title="@L["Nav_Language"]">
+            @foreach (var lang in CultureService.Supported)
+            {
+                <option value="@lang" selected="@(lang == Culture.Current)">@L["Lang_" + lang]</option>
+            }
+        </select>
+    </label>
+</nav>
+
+<main id="main">
+    @Body
+</main>
+
+@code {
+    private Task OnCultureChanged(ChangeEventArgs e)
+        => Culture.SetCultureAsync(e.Value?.ToString() ?? CultureService.Default);
+}

@@ -5,3 +5,14 @@
 *.js   text eol=lf
 *.gif  binary
 *.png  binary
+
+# .NET sources added in 0.2.0
+*.cs     text eol=lf
+*.razor  text eol=lf
+*.csproj text eol=lf
+*.props  text eol=lf
+*.resx   text eol=lf
+*.yml    text eol=lf
+*.json   text eol=lf
+*.md     text eol=lf
+*.sln    text eol=lf

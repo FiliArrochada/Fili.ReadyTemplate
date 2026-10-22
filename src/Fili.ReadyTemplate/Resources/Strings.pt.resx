@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Português (europeu). Mesmas chaves que Strings.resx; os testes unitários verificam a paridade. -->
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- barra de navegação -->
+  <data name="Nav_SiteLabel" xml:space="preserve"><value>Site</value></data>
+  <data name="Nav_Browse" xml:space="preserve"><value>Explorar modelos</value></data>
+  <data name="Nav_Faq" xml:space="preserve"><value>FAQ</value></data>
+  <data name="Nav_Tools" xml:space="preserve"><value>Ferramentas</value></data>
+  <data name="Nav_ReleaseNotes" xml:space="preserve"><value>Notas de versão</value></data>
+  <data name="Nav_Language" xml:space="preserve"><value>Idioma</value></data>
+  <data name="Lang_en" xml:space="preserve"><value>English</value></data>
+  <data name="Lang_pt" xml:space="preserve"><value>Português</value></data>
+
+  <!-- página inicial -->
+  <data name="Home_Title" xml:space="preserve"><value>Fili.ReadyTemplate: Visão Geral do Projeto</value></data>
+  <data name="Home_Notice_Body" xml:space="preserve"><value>é uma continuação do ReadySET 0.9.3, a última versão da biblioteca de modelos de Jason Robbins publicada em readyset.tigris.org antes do encerramento do Tigris.org. As páginas foram convertidas para HTML5 com uma folha de estilos moderna, as ligações que morreram com o Tigris apontam agora para este site ou para o Internet Archive, e o site pode ser lido em mais do que um idioma. O conteúdo dos modelos é o original do ReadySET, sob a</value></data>
+  <data name="Home_Notice_LicenseLink" xml:space="preserve"><value>licença ReadySET</value></data>
+  <data name="Home_Notice_Disclaimer" xml:space="preserve"><value>Esta continuação não é afiliada nem endossada pelo seu autor. Veja as</value></data>
+  <data name="Home_Notice_ReleaseNotesLink" xml:space="preserve"><value>notas de versão</value></data>
+  <data name="Home_Notice_GitHubLink" xml:space="preserve"><value>Código-fonte, transferências e registo de problemas no GitHub</value></data>
+  <data name="Home_OriginalOverviewNote" xml:space="preserve"><value>As secções abaixo são a visão geral original do projeto ReadySET, mantida tal como Jason Robbins a escreveu em 2004; "ReadySET" e "este projeto" referem-se aí a esse projeto.</value></data>
+  <data name="Quick_Browse" xml:space="preserve"><value>Explorar modelos</value></data>
+  <data name="Quick_Download" xml:space="preserve"><value>Transferir modelos</value></data>
+  <data name="Quick_Wisdom" xml:space="preserve"><value>Words-of-wisdom (arquivo)</value></data>
+  <data name="Quick_ReleaseNotes" xml:space="preserve"><value>Notas de versão</value></data>
+
+  <!-- página de exploração -->
+  <data name="Browse_Title" xml:space="preserve"><value>Explorar os Modelos</value></data>
+  <data name="Browse_Intro_1" xml:space="preserve"><value>Cada modelo é uma página HTML autónoma. Abra um para o ler, ou</value></data>
+  <data name="Browse_Intro_DownloadLink" xml:space="preserve"><value>transfira o conjunto completo</value></data>
+  <data name="Browse_Intro_2" xml:space="preserve"><value>e copie a pasta templates para o seu projeto. As caixas amarelas TODO e TIP são instruções que deve apagar, o texto em MAIÚSCULAS destina-se a ser substituído e o texto de exemplo tem uma barra colorida na margem direita. A</value></data>
+  <data name="Browse_Intro_FaqLink" xml:space="preserve"><value>FAQ</value></data>
+  <data name="Browse_Intro_3" xml:space="preserve"><value>explica as convenções em detalhe.</value></data>
+  <data name="Browse_Intro_Groupings" xml:space="preserve"><value>Os mesmos modelos estão listados abaixo de três formas; escolha a que melhor se adequa à forma como pensa num projeto. As entradas indentadas são folhas de trabalho anexas ao documento acima delas.</value></data>
+  <data name="Browse_ByActivity" xml:space="preserve"><value>Por atividade</value></data>
+  <data name="Browse_BySequence" xml:space="preserve"><value>Por sequência sugerida</value></data>
+  <data name="Browse_All" xml:space="preserve"><value>Todos os modelos, por ordem alfabética</value></data>
+  <data name="Browse_Getting_Title" xml:space="preserve"><value>Obter os modelos</value></data>
+  <data name="Browse_Getting_DownloadLink" xml:space="preserve"><value>Transfira o arquivo dos modelos</value></data>
+  <data name="Browse_Getting_1" xml:space="preserve"><value>em zip, ou clone</value></data>
+  <data name="Browse_Getting_RepoLink" xml:space="preserve"><value>o repositório</value></data>
+  <data name="Browse_Getting_1b" xml:space="preserve"><value>Os modelos estão na pasta templates e só precisam de um navegador.</value></data>
+  <data name="Browse_Getting_2a" xml:space="preserve"><value>Leia as</value></data>
+  <data name="Browse_Getting_2b" xml:space="preserve"><value>recomendadas antes de editar, e</value></data>
+  <data name="Browse_Getting_UpgradeLink" xml:space="preserve"><value>como atualizar</value></data>
+  <data name="Browse_Getting_2c" xml:space="preserve"><value>se tiver documentos criados a partir de uma versão anterior.</value></data>
+  <data name="Browse_Getting_3a" xml:space="preserve"><value>As words of wisdom do projeto original, ensaios de contexto ligados a partir de cada modelo, estão preservadas no</value></data>
+  <data name="Browse_Getting_ArchiveLink" xml:space="preserve"><value>Internet Archive</value></data>
+  <data name="Browse_Footnote" xml:space="preserve"><value>Modelos copyright © 2003-2004 Jason Robbins. Todos os direitos reservados.</value></data>
+
+  <!-- cabeçalhos "por atividade" e passos da sequência -->
+  <data name="Group_Planning" xml:space="preserve"><value>Planeamento do projeto</value></data>
+  <data name="Group_Requirements" xml:space="preserve"><value>Requisitos e especificação</value></data>
+  <data name="Group_Design" xml:space="preserve"><value>Arquitetura e desenho</value></data>
+  <data name="Group_Implementation" xml:space="preserve"><value>Implementação e testes</value></data>
+  <data name="Group_Deployment" xml:space="preserve"><value>Implantação e instalação</value></data>
+  <data name="Group_Operations" xml:space="preserve"><value>Operações e suporte</value></data>
+  <data name="Group_Continuous" xml:space="preserve"><value>Contínuos ou finais</value></data>
+  <data name="Seq_Step" xml:space="preserve"><value>Passo {0}</value></data>
+  <data name="Seq_EveryWeek" xml:space="preserve"><value>Todas as semanas</value></data>
+
+  <!-- páginas de conteúdo -->
+  <data name="Content_Loading" xml:space="preserve"><value>A carregar…</value></data>
+  <data name="Content_NotTranslated" xml:space="preserve"><value>Esta página ainda não está disponível em {0}; é apresentado o original em inglês.</value></data>
+  <data name="Content_NotFound_Title" xml:space="preserve"><value>Página não encontrada</value></data>
+  <data name="Content_NotFound_Body" xml:space="preserve"><value>Não existe nenhuma página neste endereço. Pode ser uma ligação de substituição dentro de um modelo, como LINK-TO-DIAGRAM, destinada a ser preenchida quando o modelo é completado.</value></data>
+
+  <!-- nomes dos modelos -->
+  <data name="Tpl_AllInOne" xml:space="preserve"><value>Resumo tudo-em-um</value></data>
+  <data name="Tpl_Overview" xml:space="preserve"><value>Visão geral do projeto</value></data>
+  <data name="Tpl_Proposal" xml:space="preserve"><value>Proposta de projeto</value></data>
+  <data name="Tpl_TargetAndBenefits" xml:space="preserve"><value>Mercado-alvo e benefícios</value></data>
+  <data name="Tpl_Plan" xml:space="preserve"><value>Plano de projeto</value></data>
+  <data name="Tpl_ResourceNeeds" xml:space="preserve"><value>Necessidades de recursos</value></data>
+  <data name="Tpl_Risks" xml:space="preserve"><value>Lista de riscos</value></data>
+  <data name="Tpl_Legal" xml:space="preserve"><value>Questões legais</value></data>
+  <data name="Tpl_QaPlan" xml:space="preserve"><value>Plano de QA</value></data>
+  <data name="Tpl_UserNeeds" xml:space="preserve"><value>Declaração de necessidades dos utilizadores</value></data>
+  <data name="Tpl_InterviewNotes" xml:space="preserve"><value>Notas de entrevista</value></data>
+  <data name="Tpl_InterviewChecklist" xml:space="preserve"><value>Lista de verificação de entrevista</value></data>
+  <data name="Tpl_Srs" xml:space="preserve"><value>Especificação de requisitos de software</value></data>
+  <data name="Tpl_UseCaseSuite" xml:space="preserve"><value>Conjunto de casos de uso</value></data>
+  <data name="Tpl_UseCases" xml:space="preserve"><value>Casos de uso</value></data>
+  <data name="Tpl_UseCaseFormat" xml:space="preserve"><value>Formato de caso de uso</value></data>
+  <data name="Tpl_FeatureSet" xml:space="preserve"><value>Conjunto de funcionalidades</value></data>
+  <data name="Tpl_Features" xml:space="preserve"><value>Funcionalidades</value></data>
+  <data name="Tpl_FeatureFormat" xml:space="preserve"><value>Formato de funcionalidade</value></data>
+  <data name="Tpl_Design" xml:space="preserve"><value>Desenho</value></data>
+  <data name="Tpl_DesignArchitecture" xml:space="preserve"><value>Desenho: arquitetura</value></data>
+  <data name="Tpl_DesignComponents" xml:space="preserve"><value>Desenho: componentes</value></data>
+  <data name="Tpl_DesignSrcOrg" xml:space="preserve"><value>Desenho: código-fonte e compilação</value></data>
+  <data name="Tpl_DesignUi" xml:space="preserve"><value>Desenho: interface de utilizador</value></data>
+  <data name="Tpl_DesignPersistence" xml:space="preserve"><value>Desenho: persistência</value></data>
+  <data name="Tpl_DesignScalability" xml:space="preserve"><value>Desenho: escalabilidade</value></data>
+  <data name="Tpl_DesignSecurity" xml:space="preserve"><value>Desenho: segurança</value></data>
+  <data name="Tpl_UserGuide" xml:space="preserve"><value>Guia do utilizador</value></data>
+  <data name="Tpl_TestSuite" xml:space="preserve"><value>Conjunto de testes</value></data>
+  <data name="Tpl_TestCaseFormat" xml:space="preserve"><value>Formato de caso de teste</value></data>
+  <data name="Tpl_TestCases" xml:space="preserve"><value>Casos de teste</value></data>
+  <data name="Tpl_TestRunSuite" xml:space="preserve"><value>Conjunto de execuções de teste</value></data>
+  <data name="Tpl_TestRuns" xml:space="preserve"><value>Execuções de teste</value></data>
+  <data name="Tpl_ReleaseChecklist" xml:space="preserve"><value>Lista de verificação de lançamento</value></data>
+  <data name="Tpl_Install" xml:space="preserve"><value>Guia de instalação / início rápido</value></data>
+  <data name="Tpl_ReleaseNotes" xml:space="preserve"><value>Notas de versão</value></data>
+  <data name="Tpl_DemoScript" xml:space="preserve"><value>Guião de demonstração</value></data>
+  <data name="Tpl_Faq" xml:space="preserve"><value>FAQ / guia de resolução de problemas</value></data>
+  <data name="Tpl_ImplementationNotes" xml:space="preserve"><value>Notas de implementação</value></data>
+  <data name="Tpl_Glossary" xml:space="preserve"><value>Glossário</value></data>
+  <data name="Tpl_GlossaryStd" xml:space="preserve"><value>Glossário: termos padrão</value></data>
+  <data name="Tpl_StatusReport" xml:space="preserve"><value>Relatório de estado</value></data>
+  <data name="Tpl_ReviewMeetingNotes" xml:space="preserve"><value>Notas de reunião de revisão</value></data>
+  <data name="Tpl_ReviewMeetingChecklists" xml:space="preserve"><value>Listas de verificação de reunião de revisão</value></data>
+  <data name="Tpl_Sdm" xml:space="preserve"><value>Metodologia de desenvolvimento de software</value></data>
+  <data name="Tpl_License" xml:space="preserve"><value>Licença ReadySET</value></data>
+</root>

@@ -1,0 +1,68 @@
+name: Deploy GitHub Pages
+
+# Runs the unit tests, publishes the Blazor WebAssembly site and deploys its wwwroot as the
+# whole GitHub Pages site (https://filiarrochada.github.io/Fili.ReadyTemplate/).
+#
+# One-time setup: repo Settings -> Pages -> Source = "GitHub Actions". Until that is switched,
+# Pages keeps serving the old static branch and this workflow's deploy step fails.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Install wasm-tools workload
+        run: dotnet workload install wasm-tools
+
+      - name: Test
+        run: dotnet test Fili.ReadyTemplate.sln -c Release
+
+      - name: Publish the site
+        run: dotnet publish src/Fili.ReadyTemplate/Fili.ReadyTemplate.csproj -c Release -o publish
+
+      - name: Prepare for a project-site sub-path
+        # The app is built with <base href="/"> so it also runs locally; Pages serves it under
+        # /Fili.ReadyTemplate/. Deep links to Blazor routes hit files that do not exist, and Pages
+        # answers those with 404.html, so that file has to be the app too.
+        run: |
+          sed -i 's#<base href="/" />#<base href="/Fili.ReadyTemplate/" />#' publish/wwwroot/index.html
+          grep -q 'base href="/Fili.ReadyTemplate/"' publish/wwwroot/index.html
+          cp publish/wwwroot/index.html publish/wwwroot/404.html
+          test -f publish/wwwroot/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: publish/wwwroot
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,63 @@
+@page "/templates/{FileName}"
+@page "/docs/{FileName}"
+@page "/docs/readyset/{FileName}"
+@inject IStringLocalizer<Strings> L
+@inject ContentLoader Loader
+@inject CultureService Culture
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+<PageTitle>@(_page?.Title ?? "Fili.ReadyTemplate")</PageTitle>
+
+@if (_loading)
+{
+    <p class="loading">@L["Content_Loading"]</p>
+}
+else if (_page is null)
+{
+    <NotFoundContent Path="@_path" />
+}
+else
+{
+    @if (_page.FellBackToDefault)
+    {
+        <div class="tip">@L["Content_NotTranslated", L["Lang_" + _page.RequestedCulture]]</div>
+    }
+    <article class="content">@((MarkupString)_page.BodyHtml)</article>
+}
+
+@code {
+    [Parameter] public string? FileName { get; set; }
+
+    private ContentPage? _page;
+    private bool _loading = true;
+    private string _path = "";
+    private bool _scrollPending;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        // The three routes all map straight onto a static file of the same path, so the
+        // URL itself is the content path; FileName only exists to make the routes match.
+        var path = ContentPaths.FromRelativeUri(Navigation.ToBaseRelativePath(Navigation.Uri));
+        if (path == _path && _page is not null)
+        {
+            _scrollPending = true;
+            return;
+        }
+
+        _path = path;
+        _loading = true;
+        _page = await Loader.LoadAsync(path);
+        _loading = false;
+        _scrollPending = true;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_scrollPending && !_loading)
+        {
+            _scrollPending = false;
+            await JS.InvokeVoidAsync("filiReadyTemplate.scrollToHash");
+        }
+    }
+}

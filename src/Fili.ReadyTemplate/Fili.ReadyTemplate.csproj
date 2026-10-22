@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <RootNamespace>Fili.ReadyTemplate</RootNamespace>
+    <AssemblyName>Fili.ReadyTemplate</AssemblyName>
+    <!-- The culture is decided before .NET starts (wwwroot/js/app.js passes it to Blazor.start),
+         so the runtime loads only that culture's ICU shard and satellite assembly. Invariant
+         globalization must stay off or IStringLocalizer would never see the Portuguese resources. -->
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <BlazorWebAssemblyLoadAllGlobalizationData>false</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Lets the unit tests inspect the pure helpers without going through the browser. -->
+    <InternalsVisibleTo Include="Fili.ReadyTemplate.UnitTests" />
+  </ItemGroup>
+
+</Project>

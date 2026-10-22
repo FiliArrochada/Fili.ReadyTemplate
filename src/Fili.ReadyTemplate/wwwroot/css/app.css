@@ -1,0 +1,62 @@
+/* app.css - styles that belong to the Blazor shell rather than to the templates.
+   The templates' readyset.css provides the page, navigation bar, callouts and tables;
+   this file only adds what the shell introduces: the language switch, the loading
+   states and the runtime error banner. */
+
+.sitenav .lang {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sitenav .lang select {
+  font: inherit;
+  color: var(--rs-nav-fg);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--rs-nav-fg) 40%, transparent);
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+}
+
+.sitenav .lang select option {
+  color: var(--rs-fg);
+  background: var(--rs-bg);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading {
+  color: var(--rs-muted);
+  padding: 2rem 0;
+}
+
+#blazor-error-ui {
+  display: none;
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.25);
+}
+
+#blazor-error-ui .dismiss {
+  float: right;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  font-weight: 700;
+}
+
+#blazor-error-ui .reload {
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- English (default) strings for the site shell. Keys are grouped by the page that uses them;
+       Tpl_* are template display names and Group_* the "by activity" headings, both driven by
+       Services/TemplateCatalog.cs. Every key here must also exist in Strings.pt.resx; the unit
+       tests enforce that. -->
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- navigation bar -->
+  <data name="Nav_SiteLabel" xml:space="preserve"><value>Site</value></data>
+  <data name="Nav_Browse" xml:space="preserve"><value>Browse templates</value></data>
+  <data name="Nav_Faq" xml:space="preserve"><value>FAQ</value></data>
+  <data name="Nav_Tools" xml:space="preserve"><value>Tools</value></data>
+  <data name="Nav_ReleaseNotes" xml:space="preserve"><value>Release notes</value></data>
+  <data name="Nav_Language" xml:space="preserve"><value>Language</value></data>
+  <data name="Lang_en" xml:space="preserve"><value>English</value></data>
+  <data name="Lang_pt" xml:space="preserve"><value>Português</value></data>
+
+  <!-- home page -->
+  <data name="Home_Title" xml:space="preserve"><value>Fili.ReadyTemplate: Project Overview</value></data>
+  <data name="Home_Notice_Body" xml:space="preserve"><value>is a continuation of ReadySET 0.9.3, the last version of Jason Robbins' template library published at readyset.tigris.org before Tigris.org shut down. The pages have been converted to HTML5 with a modern stylesheet, the links that died with Tigris repointed to this site or to the Internet Archive, and the site can now be read in more than one language. The template content is the ReadySET original, under the</value></data>
+  <data name="Home_Notice_LicenseLink" xml:space="preserve"><value>ReadySET license</value></data>
+  <data name="Home_Notice_Disclaimer" xml:space="preserve"><value>This continuation is not affiliated with or endorsed by its author. See the</value></data>
+  <data name="Home_Notice_ReleaseNotesLink" xml:space="preserve"><value>release notes</value></data>
+  <data name="Home_Notice_GitHubLink" xml:space="preserve"><value>Source, downloads and an issue tracker are on GitHub</value></data>
+  <data name="Home_OriginalOverviewNote" xml:space="preserve"><value>The sections below are the original ReadySET project overview, kept as Jason Robbins wrote it in 2004; "ReadySET" and "this project" in them refer to that project.</value></data>
+  <data name="Quick_Browse" xml:space="preserve"><value>Browse templates</value></data>
+  <data name="Quick_Download" xml:space="preserve"><value>Download templates</value></data>
+  <data name="Quick_Wisdom" xml:space="preserve"><value>Words-of-wisdom (archived)</value></data>
+  <data name="Quick_ReleaseNotes" xml:space="preserve"><value>Release notes</value></data>
+
+  <!-- browse page -->
+  <data name="Browse_Title" xml:space="preserve"><value>Browse the Templates</value></data>
+  <data name="Browse_Intro_1" xml:space="preserve"><value>Every template is a stand-alone HTML page. Open one to read it, or</value></data>
+  <data name="Browse_Intro_DownloadLink" xml:space="preserve"><value>download the whole set</value></data>
+  <data name="Browse_Intro_2" xml:space="preserve"><value>and copy the templates folder into your project. Yellow TODO and TIP boxes are instructions for you to delete, text in ALL CAPS is to be replaced, and example text carries a coloured rule on its right-hand edge. The</value></data>
+  <data name="Browse_Intro_FaqLink" xml:space="preserve"><value>FAQ</value></data>
+  <data name="Browse_Intro_3" xml:space="preserve"><value>explains the conventions in detail.</value></data>
+  <data name="Browse_Intro_Groupings" xml:space="preserve"><value>The same templates are listed three ways below; pick whichever suits how you think about a project. Indented entries are worksheets attached to the document above them.</value></data>
+  <data name="Browse_ByActivity" xml:space="preserve"><value>By activity</value></data>
+  <data name="Browse_BySequence" xml:space="preserve"><value>By suggested sequence</value></data>
+  <data name="Browse_All" xml:space="preserve"><value>All templates, alphabetically</value></data>
+  <data name="Browse_Getting_Title" xml:space="preserve"><value>Getting the templates</value></data>
+  <data name="Browse_Getting_DownloadLink" xml:space="preserve"><value>Download the template archive</value></data>
+  <data name="Browse_Getting_1" xml:space="preserve"><value>as a zip, or clone</value></data>
+  <data name="Browse_Getting_RepoLink" xml:space="preserve"><value>the repository</value></data>
+  <data name="Browse_Getting_1b" xml:space="preserve"><value>The templates live in the templates folder and need nothing but a browser.</value></data>
+  <data name="Browse_Getting_2a" xml:space="preserve"><value>Read the recommended</value></data>
+  <data name="Browse_Getting_2b" xml:space="preserve"><value>before editing, and</value></data>
+  <data name="Browse_Getting_UpgradeLink" xml:space="preserve"><value>how to upgrade</value></data>
+  <data name="Browse_Getting_2c" xml:space="preserve"><value>if you have documents made from an earlier release.</value></data>
+  <data name="Browse_Getting_3a" xml:space="preserve"><value>The original project's words of wisdom, background essays linked from each template, are preserved in the</value></data>
+  <data name="Browse_Getting_ArchiveLink" xml:space="preserve"><value>Internet Archive</value></data>
+  <data name="Browse_Footnote" xml:space="preserve"><value>Templates copyright © 2003-2004 Jason Robbins. All rights reserved.</value></data>
+
+  <!-- "by activity" headings and the sequence steps -->
+  <data name="Group_Planning" xml:space="preserve"><value>Project planning</value></data>
+  <data name="Group_Requirements" xml:space="preserve"><value>Requirements and specification</value></data>
+  <data name="Group_Design" xml:space="preserve"><value>Architecture and design</value></data>
+  <data name="Group_Implementation" xml:space="preserve"><value>Implementation and testing</value></data>
+  <data name="Group_Deployment" xml:space="preserve"><value>Deployment and installation</value></data>
+  <data name="Group_Operations" xml:space="preserve"><value>Operations and support</value></data>
+  <data name="Group_Continuous" xml:space="preserve"><value>Continuous or final</value></data>
+  <data name="Seq_Step" xml:space="preserve"><value>Step {0}</value></data>
+  <data name="Seq_EveryWeek" xml:space="preserve"><value>Every week</value></data>
+
+  <!-- content pages -->
+  <data name="Content_Loading" xml:space="preserve"><value>Loading…</value></data>
+  <data name="Content_NotTranslated" xml:space="preserve"><value>This page is not yet available in {0}; the English original is shown.</value></data>
+  <data name="Content_NotFound_Title" xml:space="preserve"><value>Page not found</value></data>
+  <data name="Content_NotFound_Body" xml:space="preserve"><value>There is no page at this address. It may be a placeholder link inside a template, such as LINK-TO-DIAGRAM, which is meant to be replaced when the template is filled in.</value></data>
+
+  <!-- template display names -->
+  <data name="Tpl_AllInOne" xml:space="preserve"><value>All-in-one summary</value></data>
+  <data name="Tpl_Overview" xml:space="preserve"><value>Project overview</value></data>
+  <data name="Tpl_Proposal" xml:space="preserve"><value>Project proposal</value></data>
+  <data name="Tpl_TargetAndBenefits" xml:space="preserve"><value>Target market and benefits</value></data>
+  <data name="Tpl_Plan" xml:space="preserve"><value>Project plan</value></data>
+  <data name="Tpl_ResourceNeeds" xml:space="preserve"><value>Resource needs</value></data>
+  <data name="Tpl_Risks" xml:space="preserve"><value>Risk list</value></data>
+  <data name="Tpl_Legal" xml:space="preserve"><value>Legal issues</value></data>
+  <data name="Tpl_QaPlan" xml:space="preserve"><value>QA plan</value></data>
+  <data name="Tpl_UserNeeds" xml:space="preserve"><value>Statement of user needs</value></data>
+  <data name="Tpl_InterviewNotes" xml:space="preserve"><value>Interview notes</value></data>
+  <data name="Tpl_InterviewChecklist" xml:space="preserve"><value>Interview checklist</value></data>
+  <data name="Tpl_Srs" xml:space="preserve"><value>Software requirements specification</value></data>
+  <data name="Tpl_UseCaseSuite" xml:space="preserve"><value>Use case suite</value></data>
+  <data name="Tpl_UseCases" xml:space="preserve"><value>Use cases</value></data>
+  <data name="Tpl_UseCaseFormat" xml:space="preserve"><value>Use case format</value></data>
+  <data name="Tpl_FeatureSet" xml:space="preserve"><value>Feature set</value></data>
+  <data name="Tpl_Features" xml:space="preserve"><value>Features</value></data>
+  <data name="Tpl_FeatureFormat" xml:space="preserve"><value>Feature format</value></data>
+  <data name="Tpl_Design" xml:space="preserve"><value>Design</value></data>
+  <data name="Tpl_DesignArchitecture" xml:space="preserve"><value>Design: architecture</value></data>
+  <data name="Tpl_DesignComponents" xml:space="preserve"><value>Design: components</value></data>
+  <data name="Tpl_DesignSrcOrg" xml:space="preserve"><value>Design: source and build</value></data>
+  <data name="Tpl_DesignUi" xml:space="preserve"><value>Design: user interface</value></data>
+  <data name="Tpl_DesignPersistence" xml:space="preserve"><value>Design: persistence</value></data>
+  <data name="Tpl_DesignScalability" xml:space="preserve"><value>Design: scalability</value></data>
+  <data name="Tpl_DesignSecurity" xml:space="preserve"><value>Design: security</value></data>
+  <data name="Tpl_UserGuide" xml:space="preserve"><value>User guide</value></data>
+  <data name="Tpl_TestSuite" xml:space="preserve"><value>Test suite</value></data>
+  <data name="Tpl_TestCaseFormat" xml:space="preserve"><value>Test case format</value></data>
+  <data name="Tpl_TestCases" xml:space="preserve"><value>Test cases</value></data>
+  <data name="Tpl_TestRunSuite" xml:space="preserve"><value>Test run suite</value></data>
+  <data name="Tpl_TestRuns" xml:space="preserve"><value>Test runs</value></data>
+  <data name="Tpl_ReleaseChecklist" xml:space="preserve"><value>Release checklist</value></data>
+  <data name="Tpl_Install" xml:space="preserve"><value>Installation / quick start guide</value></data>
+  <data name="Tpl_ReleaseNotes" xml:space="preserve"><value>Release notes</value></data>
+  <data name="Tpl_DemoScript" xml:space="preserve"><value>Demo script</value></data>
+  <data name="Tpl_Faq" xml:space="preserve"><value>FAQ / troubleshooting guide</value></data>
+  <data name="Tpl_ImplementationNotes" xml:space="preserve"><value>Implementation notes</value></data>
+  <data name="Tpl_Glossary" xml:space="preserve"><value>Glossary</value></data>
+  <data name="Tpl_GlossaryStd" xml:space="preserve"><value>Glossary: standard terms</value></data>
+  <data name="Tpl_StatusReport" xml:space="preserve"><value>Status report</value></data>
+  <data name="Tpl_ReviewMeetingNotes" xml:space="preserve"><value>Review meeting notes</value></data>
+  <data name="Tpl_ReviewMeetingChecklists" xml:space="preserve"><value>Review meeting checklists</value></data>
+  <data name="Tpl_Sdm" xml:space="preserve"><value>Software development methodology</value></data>
+  <data name="Tpl_License" xml:space="preserve"><value>ReadySET license</value></data>
+</root>

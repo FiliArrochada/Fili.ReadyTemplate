@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="stylesheet" href="../templates/css/readyset.css" />
+ <link rel="stylesheet" href="../templates/css/inst.css" />
+ <link rel="stylesheet" href="../templates/css/print.css" media="print" />
+ <title>Fili.ReadyTemplate 0.2.0: Release Notes</title>
+</head>
+
+<body>
+<nav class="sitenav" aria-label="Site"><a class="brand" href="../index.html">Fili.ReadyTemplate <small>0.2.0</small></a><a href="../templates/browse.html">Browse templates</a><a href="../docs/faq.html">FAQ</a><a href="../docs/recommended-tools.html">Tools</a><a href="https://github.com/FiliArrochada/Fili.ReadyTemplate">GitHub</a></nav>
+ <h2>Fili.ReadyTemplate 0.2.0: Release Notes</h2>
+
+<div class="app">
+<div class="readyset">
+
+ <div id="releaseinfo">
+ <h3>Product Release Information</h3>
+ <table border="1" cellpadding="3" cellspacing="2" class="axial">
+  <tr>
+   <th>Product:</th>
+   <td><a href="../index.html">Fili.ReadyTemplate</a>, a continuation of ReadySET</td>
+  </tr>
+  <tr>
+   <th>Release Number:</th>
+   <td>0.2.0</td>
+  </tr>
+  <tr>
+   <th>Release Date:</th>
+   <td>2026/09/16</td>
+  </tr>
+  <tr>
+   <th>Previous Release:</th>
+   <td><a href="release-notes-0-1-0.html">0.1.0</a></td>
+  </tr>
+  <tr>
+   <th>Customer Support:</th>
+   <td>Questions and problem reports go to the
+       <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate/issues">issue tracker</a>.</td>
+  </tr>
+ </table>
+ </div> <!-- /releaseinfo -->
+
+
+ <div id="introduction">
+ <h3>Introduction</h3>
+
+ <p>This release makes the site multilingual. The pages around the templates, the navigation
+ bar, the home page and the browse page, are now rendered by a small Blazor WebAssembly
+ application and can be read in English or Portuguese; a language switch sits at the right of the
+ navigation bar and the choice is remembered. The templates themselves are unchanged and remain
+ plain HTML files that work on their own.</p>
+
+ </div> <!-- /introduction -->
+
+
+ <div id="whatsnew">
+ <h3>What's New?</h3>
+
+ <ul>
+  <li><strong>Two languages.</strong> The site's own text is available in English and Portuguese.
+  The browser's language picks the default; the switch in the navigation bar overrides it and the
+  choice is kept in the browser.</li>
+
+  <li><strong>Translated content, when it exists.</strong> A template or documentation page can
+  have a translation stored in a culture-named folder beside the original, for example
+  <code>templates/pt/proposal.html</code> next to <code>templates/proposal.html</code>. When a
+  visitor reads the site in that language the translation is shown; when there is none, the
+  English original is shown with a note saying so. No template has been translated yet: this
+  release provides the mechanism, and translations will follow as separate work.</li>
+
+  <li><strong>Templates stay standalone.</strong> Every template is still a self-contained HTML
+  file under <code>templates/</code>. Opened directly, it renders exactly as in 0.1.0 with its own
+  navigation bar; opened through the site, that bar is replaced by the localized one.</li>
+ </ul>
+
+ </div> <!-- /whatsnew -->
+
+
+ <div id="installation">
+ <h3>Installation and Upgrade Notes</h3>
+
+ <dl>
+
+ <dt>Installation</dt>
+
+ <dd>Nothing changes for users of the templates: download the
+ <a href="https://github.com/FiliArrochada/Fili.ReadyTemplate/archive/refs/heads/main.zip">archive</a>
+ or clone the repository and copy <code>src/Fili.ReadyTemplate/wwwroot/templates</code> into
+ your project. The folder moved one level down in the repository so it can be published as part
+ of the site; its contents are the same.</dd>
+
+
+ <dt>Manifest</dt>
+
+ <dd>This release consists of the following items:
+ <ul>
+  <li>HTML templates and CSS stylesheets (unchanged from 0.1.0)</li>
+  <li>FAQ, HOWTO-upgrade, recommended tools, and release notes</li>
+  <li>The Blazor WebAssembly site that presents them, with English and Portuguese strings</li>
+ </ul>
+ </dd>
+
+
+ <dt>Minimum System Requirements</dt>
+
+ <dd>The templates need only a text editor and a web browser. The site needs a browser with
+ WebAssembly, which every current browser has; without JavaScript the templates and docs can
+ still be opened as files.</dd>
+
+
+ <dt>Version Compatibility</dt>
+
+ <dd>Documents made from any earlier release need no changes.</dd>
+
+ </dl>
+
+ </div> <!-- /installation -->
+
+
+ <div id="recentchanges">
+ <h3>Recent Changes</h3>
+
+ <table>
+  <tr class="a"><th>Type</th><th>Summary</th></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>Blazor WebAssembly shell renders the home, browse and content pages inside a localized layout</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>English and Portuguese string tables; language switch in the navigation bar, remembered in the browser</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>Per-culture content folders with fallback to the English original and a notice when falling back</td></tr>
+  <tr class="a"><td>ENHANCEMENT</td><td>Repository reshaped into src/ and tst/ with a solution, unit tests and a GitHub Actions deployment</td></tr>
+ </table>
+
+ </div> <!-- /recentchanges -->
+
+
+ <div id="knownproblems">
+ <h3>Known Problems and Workarounds</h3>
+
+ <ul>
+  <li>Deep links to a page that exists only as a route, such as the browse page, are answered by
+  GitHub Pages with a 404 status before the application takes over and shows the page. Browsers
+  do not care; search engines may.</li>
+  <li>Switching language reloads the page, because the runtime loads one culture's resources at
+  startup.</li>
+ </ul>
+
+ </div> <!-- /knownproblems -->
+
+
+</div>
+</div>
+</body>
+</html>
